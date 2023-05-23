@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+    <script src="../static/js/myCalSystem.js"></script>
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/smoothscroll.js"></script>
+    <title>Peters' Calculator</title>
+</head>
+<body onload="initCalc()">
+
+<div class="row">
+    <div class="instructions">
+        <p id="instructions"><img src="../static/images/peebot.jpg" height="20" width="20" style="border-radius: 50%;"> <span style="color: #ffc83d; font-weight: bold;">PEE BOT: </span>Hi, &#128075; Welcome to Pete's Calc. <br> Press the ON button let's begin!</p>
+    </div>       
+</div>
+
+<div class="row bg-wood">
+    <div class="body">
+    <div class="frame">
+        <span class="name">
+            <img src="../static/images/logo.png" class="copyright" alt="">
+            <span>Pete's Calc</span>
+        </span>
+        <input onkeydown="initCalc()" onload="clear()" id="display" type="text" name="display" class="display">
+        <button onclick="add(this)">1</button>
+        <button onclick="add(this)">2</button>
+        <button onclick="add(this)">3</button>
+        <button onclick="power()" id="powerBTN" class="power"><span id="power">ON</span></button>
+        <button onclick="add(this)">4</button>
+        <button onclick="add(this)">5</button>
+        <button onclick="add(this)">6</button>
+        <button onclick="add(this)">.</button>
+        <button onclick="add(this)">7</button>
+        <button onclick="add(this)">8</button>
+        <button onclick="add(this)">9</button>
+        <button onclick="add(this)">0</button>
+
+        <hr width="90%" style="opacity: .4; border: 1px solid rgb(0, 0, 0);">
+
+        <button onclick="add(this)">+</button>
+        <button onclick="add(this)">-</button>
+        <button onclick="add(this)">/</button>
+        <button onclick="add(this)">*</button>
+        <button onclick="clearScreen()" id="cancel">C</button>
+        <button onclick="del()" id="del">Del</button>
+        <button onclick="compute()" id="doubleBtn">=</button>
+
+        <hr width="90%" style="opacity: .4; border: 1px solid rgb(0, 0, 0); margin: 2px; margin-top: 20px;">
+
+        <hr width="70%" style="opacity: .3; border: 1px solid rgb(0, 0, 0); margin: 2px;">
+
+        <hr width="50%" style="opacity: .1; border: 1px solid rgb(0, 0, 0); margin: 2px;">
+    </div>
+    
+</div>
+</div>
+<div class="row hideOnMobile">
+        <img id="coffee" src="../static/images/coffee.png" alt="">
+        <div class="shadow">.</div>
+        <img id="smoke" src="../static/images/Animated Smoke.gif" alt="">
+        <img id="hand" src="../static/images/hand.jpg" alt="">
+        
+
+</div>
+
+
+</body>
+</html>
+
+<script>
+       $("#powerBTN").click(function(){
+        $("#coffee").animate({
+          "margin-right": "120px",
+        }, 1000);
+
+        $(".shadow").animate({
+          "margin-right": "120px",
+        }, 1000);
+
+        $("#smoke").animate({
+          "margin-right": "70px",
+        }, 1000);
+
+        $("#hand").animate({
+          "margin-right": "-18px",
+        }, 1000);
+
+        setInterval(function(){
+
+            $("#hand").animate({
+          "margin-right": "-620px",
+        }, 1000);
+
+        })
+
+      }); 
+</script>
