@@ -21,12 +21,15 @@
         if (parseInt(screen.value) == 0 && powerBTN.innerHTML == "OFF") // Identifies if its first value to be added. When calculator powers on, default screen value is 0
         {
             screen.value = btnVal; // This will replace the default '0' with our new button value to avoid issues like 01,08,03, etc.
+            document.getElementById('instructions').innerHTML="<img src='images/peebot.jpg' height='20' width='20' style='border-radius: 50%;'> <span style='color: #ffc83d; font-weight: bold;'>PEE BOT: </span>Perfect!<br>Keep Going! &#128077;"
         }
         else if(parseInt(screen.value) > 0 && powerBTN.innerHTML == "OFF") //This means that there is an existing value on our screen and this is not the users first action
         {
             screen.value += btnVal; // Therefore, I use += to add new value to existing values (while = alone as used above replaces a value completely)
+            document.getElementById('instructions').innerHTML="<img src='images/peebot.jpg' height='20' width='20' style='border-radius: 50%;'> <span style='color: #ffc83d; font-weight: bold;'>PEE BOT: </span>Good!<br>You're doing well! &#128077;"
         }
         else{
+            document.getElementById('instructions').innerHTML="<img src='images/peebot.jpg' height='20' width='20' style='border-radius: 50%;'> <span style='color: #ffc83d; font-weight: bold;'>PEE BOT: </span>Oops, I am OFF!<br>Switch me ON first"
             //Do Nothing. Button is clicked when Calculator is OFF. Crazy Users LOL
         }
     }
@@ -43,6 +46,7 @@
         {
         var newValue = val.slice(0, -1); //This will remove the last element from our screen values
         screen.value = newValue // We now replace the current old value with our new value. Logic Ends
+        document.getElementById('instructions').innerHTML="<img src='images/peebot.jpg' height='20' width='20' style='border-radius: 50%;'> <span style='color: #ffc83d; font-weight: bold;'>PEE BOT: </span><br>Alright"
         }
 
         else if (val.length == 1)
@@ -83,6 +87,7 @@
         {
         screen.value = "0"; //Sets screen value to 0. initCalc will now be able to change power button to OFF and add() function will now be able to add buttons data to the screen
         screen.style.backgroundColor="rgb(38 219 206)"; //Create an LED light illusion on screen by adding a light blue background color to screen
+        document.getElementById('instructions').innerHTML="<img src='images/peebot.jpg' height='20' width='20' style='border-radius: 50%;'> <span style='color: #ffc83d; font-weight: bold;'>PEE BOT: </span>Great! Let's go...<br>(With &#128151; from P.A Gambo > <a style='color: #fff;' href='https://www.facebook.com/peter.gambo1'>Facebook</a> | <a style='color: #fff;' href='https://www.linkedin.com/in/peter-gambo'>LinkedIn</a> | <a style='color: #fff;' href='https://www.github.com.com/petergambo'>Github</a>)"
         initCalc(); //Now call initCalc to update power button. Power ON workflow complete.
         }
 
@@ -90,6 +95,7 @@
         { 
             screen.value = ""; //Reset screen value to empty
             screen.style.backgroundColor="#222222"; // Set background color to black to create a screen OFF illusion
+            document.getElementById('instructions').innerHTML="<img src='images/peebot.jpg' height='20' width='20' style='border-radius: 50%;'> <span style='color: #ffc83d; font-weight: bold;'>PEE BOT: </span>Thank you for using my service. Much &#128151;. <br>Peter Gambo > <a style='color: #fff;' href='https://www.facebook.com/peter.gambo1'>Facebook</a> | <a style='color: #fff;' href='https://www.linkedin.com/in/peter-gambo'>LinkedIn</a> | <a style='color: #fff;' href='https://www.twitter.com/lucre8tiv'>Twitter</a> | <a style='color: #fff;' href='https://www.github.com.com/petergambo'>Github</a>"
             initCalc(); //Then call initCalc to set button state appropriately.
         }
     }
@@ -101,6 +107,7 @@
         if (countLength > 0) 
         {
             screen.value = "0";
+            document.getElementById('instructions').innerHTML="<img src='images/peebot.jpg' height='20' width='20' style='border-radius: 50%;'> <span style='color: #ffc83d; font-weight: bold;'>PEE BOT: </span> Cleared! <br>Ride On!"
             
         }
         else{
@@ -115,9 +122,14 @@
         if (countLength > 0) 
         {
             screen.value = eval(screen.value);
-            
+            document.getElementById('instructions').innerHTML="<img src='images/peebot.jpg' height='20' width='20' style='border-radius: 50%;'> <span style='color: #ffc83d; font-weight: bold;'>PEE BOT: </span><br>Done!" //&#128079;
         }
+
         else{
             //Do nothing. Screen Empty 
         }
     }
+
+
+
+      

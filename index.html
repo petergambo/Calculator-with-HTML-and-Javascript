@@ -7,20 +7,30 @@
     <link rel="stylesheet" href="css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
     <script src="js/myCalSystem.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/smoothscroll.js"></script>
     <title>Peters' Calculator</title>
 </head>
 <body onload="initCalc()">
+
+<div class="row">
+    <div class="instructions">
+        <p id="instructions"><img src="images/peebot.jpg" height="20" width="20" style="border-radius: 50%;"> <span style="color: #ffc83d; font-weight: bold;">PEE BOT: </span>Hi, &#128075; Welcome to Pete's Calc. <br> Press the ON button let's begin!</p>
+    </div>       
+</div>
+
+<div class="row bg-wood">
     <div class="body">
     <div class="frame">
         <span class="name">
             <img src="images/logo.png" class="copyright" alt="">
             <span>Pete's Calc</span>
         </span>
-        <input onkeydown="initCalc()" id="display" type="text" name="display" class="display" disabled>
+        <input onkeydown="initCalc()" onload="clear()" id="display" type="text" name="display" class="display">
         <button onclick="add(this)">1</button>
         <button onclick="add(this)">2</button>
         <button onclick="add(this)">3</button>
-        <button onclick="power()" id="powerBTN" class="power"><span id="power">OFF</span></button>
+        <button onclick="power()" id="powerBTN" class="power"><span id="power">ON</span></button>
         <button onclick="add(this)">4</button>
         <button onclick="add(this)">5</button>
         <button onclick="add(this)">6</button>
@@ -48,9 +58,45 @@
     </div>
     
 </div>
-
-<div class="others"> 765
-    
 </div>
+<div class="row hideOnMobile">
+        <img id="coffee" src="images/coffee.png" alt="">
+        <div class="shadow">.</div>
+        <img id="smoke" src="images/Animated Smoke.gif" alt="">
+        <img id="hand" src="images/hand.jpg" alt="">
+        
+
+</div>
+
+
 </body>
 </html>
+
+<script>
+       $("#powerBTN").click(function(){
+        $("#coffee").animate({
+          "margin-right": "120px",
+        }, 1000);
+
+        $(".shadow").animate({
+          "margin-right": "120px",
+        }, 1000);
+
+        $("#smoke").animate({
+          "margin-right": "70px",
+        }, 1000);
+
+        $("#hand").animate({
+          "margin-right": "-18px",
+        }, 1000);
+
+        setInterval(function(){
+
+            $("#hand").animate({
+          "margin-right": "-620px",
+        }, 1000);
+
+        })
+
+      }); 
+</script>
